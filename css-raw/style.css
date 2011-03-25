@@ -1,0 +1,325 @@
+/**
+ * Candi - HoneySuckle v.0.1 (21-Feb-2011)
+ *
+ * Author: Tanin Srivaraphong
+ */
+
+/*#grid-example { margin: 0 auto; width: 100%; min-height: 100%}*/
+
+* { font-family: "Tahoma", "Arial", "Helvetica", "sans-serif";}
+
+html {
+    background-color: #E58FAA;
+    /*background-color:rgb(203,101,134);*/
+    background: #A3516B; /* old browsers */
+    background: -moz-linear-gradient(top, #D66B8D 0%, #A3516B 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D66B8D), color-stop(100%,#A3516B)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D66B8D', endColorstr='#A3516B',GradientType=0 ); /* ie */
+    background-repeat: no-repeat;
+    background-color: #A3516B;
+    height: 100%;
+}
+
+body { min-height: 100%; background-image:url(/candi2/images/grain.png); height:100%}
+
+header {
+    line-height: 40px;
+	color: #999;
+	text-shadow: 0 -1px 0 #333;
+    background: #7d7e7d; /* old browsers */
+    background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* ie */
+    font-size: 0.8em;
+    padding-right: 10px;
+    display:block;
+    clear:both;
+}
+
+#login-box {
+    /*
+margin: 15% auto 0 ; height: 200px; width: 500px; background-color: #CBCBCB; -moz-border-radius: 8px;
+-moz-box-shadow: 0 0 5px #000;
+				*/
+    /*margin: 15% auto 0;*/
+    height: 200px;
+    width: 630px;
+    text-align: center;
+    /*background-color: white;*/
+}
+
+#login-box-header {
+    margin: 0 auto 10px auto;
+    font-size: 100px;
+    color: #FEFEFE;
+    font-family: Helvertica;
+    font-weight: bolder;
+    text-shadow: 0 -2px 0px #913554, 0 1px 0px #CCC;
+}
+
+.form-element { float: left }
+#login-input, #password-input { width: 250px; margin-right: 10px;}
+
+#login-form input {
+    height: 40px;
+    width: 230px;
+    background-color: #CCC;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: 1px solid #AB6B71;
+    font-size: 22px;
+    -moz-box-shadow: 0 0 3px #EBBCCC, 0 0 5px #FFFFFF inset;
+    -webkit-box-shadow: 0 0 3px #EBBCCC, 0 0 5px #FFFFFF inset;
+    padding: 0 10px;
+}
+
+#login-form button { width: 110px; }
+#login-form input:hover { -moz-box-shadow: 0 0 20px #FFF; -webkit-box-shadow: 0 0 20px #FFF; }
+#login-form input:focus {  background-color: #FFF; outline-style: none; }
+
+button#signin-button { -moz-box-shadow: 0 1px 0 #AB6B71;}
+
+#error-msg { clear: both; height: 30px; padding: 10px; font-weight: bold; text-shadow: 0 1px 0 #888; color: yellow}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0px auto -25px auto;
+}
+
+.wrapper .inner-wrapper {
+	display: block;
+	position:absolute;
+	height:auto;
+	bottom:0;
+	top:0;
+	right:0;
+	left:0;
+	margin: 40px 0 25px 0px;
+}
+
+.wrapper .inner-wrapper .panal-list {
+	position:absolute;
+	height:100%;
+	min-height: 100%;
+	overflow:hidden;
+	/*overflow-x:hidden;*/
+	width:395px;
+	background-color: #e0acbc;
+	display:block;
+}
+
+footer .copyright {
+	line-height: 25px;
+	color: #999;
+	text-shadow: 0 -1px 0 #333;
+    background: #7d7e7d; /* old browsers */
+    background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* ie */
+    font-size: 0.8em;
+    text-align: right;
+    padding-right: 10px;
+    display:block;
+    /*text-shadow: 0 1px 0 #AB6B71;*/
+}
+
+/***************
+* main.php
+****************/
+nav {
+    background-color: #E5A6BA;
+}
+
+nav div {
+    height: 35px;
+    -moz-box-shadow: inset 0 -1px 3px #842141;
+    -webkit-box-shadow: inset 0 -1px 3px #842141;
+}
+
+nav ul { margin: 0; padding: 0; height: 35px; list-style-type: none; }
+
+/* Navigation Menu */
+#nav-menu { width: 400px; float: left; }
+#nav-menu li { display: block; float: left; height: 35px; line-height: 35px; margin-right: 10px; }
+#nav-menu li a:link,
+#nav-menu li a:visited {  padding: 3px 10px; text-decoration: none; color: #842141; }
+#nav-menu li a:hover,
+#nav-menu li a.active { -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px ;background-color: #E57398; color: white; -moz-box-shadow: inset 0 0 2px #C76486; }
+
+/* Navigation User */
+#nav-user { width: 200px;float: right; }
+#nav-user li { display: block; float: right; height: 35px; line-height: 35px; margin-right: 10px; }
+#nav-user li a:link,
+#nav-user li a:visited {  padding: 3px 10px; text-decoration: none; color: #842141; }
+#nav-user li a:hover,
+#nav-user li a.active { -moz-border-radius:5px; -webkit-border-radius:5px; background-color: #E57398; color: white; -moz-box-shadow: inset 0 0 2px #C76486; -webkit-box-shadow: inset 0 0 2px #C76486;}
+
+
+.menu-seperator { font-size: 16px; font-weight: bolder; color: #D2698A; }
+
+/*
+ * Global toolbar
+ */
+#logo-text { color: #EEE; font-size: 25px; font-weight: bolder; text-shadow:0 -1px 0px #333; width: 100px; text-align:center}
+#login-text { width: 100px; text-align:right;}
+
+/*#user-task-container { width:450px;overflow-y:auto; padding: 10px; }*/
+#user-task-container { width:400px; padding: 10px; }
+
+table#user-task { margin: 10px;  background-color: #D1C0C6; border: thin solid black;}
+table#user-task tr:hover { background-color: #EEE; cursor:pointer; }
+table#user-task td { border: thin solid black;}
+table#user-task thead { background-color: white; }
+
+#user-task td { padding: 5px; }
+
+#detail-panel { -webkit-box-shadow: 0 0 10px #B05874, 0 0 20px #FCFCFC inset; -moz-box-shadow: 0 0 10px #B05874, 0 0 20px #FCFCFC inset; margin: 10px 10px 0 10px; background-color: #FFC8DB; border: thin solid #C56382; -webkit-border-radius:4px; -moz-border-radius:4px; padding: 10px; display: none;}
+#detail-table { width: 100% }
+#detail-table td { padding: 3px; text-shadow: 0 1px 2px #FFF}
+#detail-table .label { font-weight: bold; vertical-align:top; }
+#detail-table a { text-decoration: none}
+
+/* my task grid */
+#grid-example table {margin: 0;}
+#user-task-grid .ui-state-highlight { background: #FCD67C; }
+#user-task-grid tr {cursor:pointer}
+
+#custom-filter { 
+	background: -moz-linear-gradient(
+		top,
+		#c6c6c6 0%,
+		#878787);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#c6c6c6),
+		to(#878787));
+}
+
+#custom-filter ul {
+	padding-top: 4px;
+	margin: 0 auto;
+	width: 320px;
+}
+
+#custom-filter li {
+	list-style: none;
+	display: block;
+	float: left;
+	width: 100px;
+	text-align: center;
+	line-height: 20px;
+	height: 25px;
+}
+
+#custom-filter li a {
+	display: block;
+	line-height: 20px;
+	padding: 3px;
+	text-decoration: none;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	color: #ffffff;
+	background: -moz-linear-gradient(
+		top,
+		#c6c6c6 0%,
+		#878787);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#c6c6c6),
+		to(#878787));
+	-moz-box-shadow:
+		0px 3px 11px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(069,115,167,1);
+	-webkit-box-shadow:
+		0px 3px 11px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(069,115,167,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+#custom-filter li a:hover {
+	color: yellow;
+}
+
+
+/* review.php */
+
+#review-panel {
+    padding: 10px 0px;
+    width: 980px;
+    background-color: #F7C6D7;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 10px #b05874,inset 0 0 20px #FCFCFC;
+    -moz-box-shadow: 0px 0px 10px #b05874,inset 0 0 20px #FCFCFC;
+    box-shadow: 0px 0px 10px #b05874,inset 0 0 20px #FCFCFC;
+}
+
+#review-panel a, #review-panel a:visited {text-decoration: none; color:blue}
+#review-panel a:hover {text-decoration: underline}
+
+#review-panel select option { font: 100%}
+
+#review-panel ul { padding-left: 2em; margin: 0;}
+#review-panel ul li { list-style-type: none; font-size: 14px; text-shadow: 0 -1px 0 #CCC; line-height: 180%; }
+#review-panel ul li span { display: inline-block; width: 115px; font-weight: bold; text-shadow: 0 1px 0 #FFF}
+#review-panel #review-comment { background-color: #EFEFEF; -moz-box-shadow: 0 0 8px #A3516B inset; -webkit-box-shadow: 0 0 8px #A3516B inset;width: 905px; -moz-border-radius: 4px; -webkit-border-radius: 4px; padding: 10px; }
+#review-panel textarea {width: 100%; border: none; background-color:transparent; outline: none}
+#review-panel #state { width: 170px; }
+#review-panel #owner { width: 170px; }
+/*
+#review-panel #state option[selected] { font-weight: bold; }
+#review-panel #owner option[selected] { font-weight: bold; }
+*/
+
+#review_table { width: 980px; }
+#upd-message { width:100%; position:fixed; background-color: #FF7EA7; color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 20px; display:none; }
+#review_table #logo-text {
+    /*margin: 20px auto 10px auto;*/
+
+    padding: 20px 0 10px 0;
+    font: bold 40px "Helvetica";
+    text-shadow: 0px 1px 0px #A7536E;
+    text-align: left;
+    color : white;
+}
+
+#review-panel blockquote {
+    margin: 0;
+    margin-right: 2em;
+    padding: 0.5em;
+    background-color: #EFEFEF;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-box-shadow: 0 0 8px #A3516B inset;
+    -webkit-box-shadow: 0 0 8px #A3516B inset;
+}
+
+.caution {
+    padding: 10px;
+    color: #842141;
+}
+
+/* qTip */
+/*! Add rounded corners to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE9+, Safari 2+ */
+.ui-tooltip-rounded,
+.ui-tooltip-rounded .ui-tooltip-content{
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.ui-tooltip-rounded .ui-tooltip-titlebar{
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.ui-tooltip-rounded .ui-tooltip-titlebar + .ui-tooltip-content{
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
